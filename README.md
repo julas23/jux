@@ -22,7 +22,7 @@ Your data lives where you decide. Your system leaves no trace where it runs. Whe
 
 Somewhere along the way, the personal computer stopped being personal.
 
-Operating systems became platforms for telemetry. Applications became subscriptions. Your files became someone else's cloud. Your habits became someone else's dataset. The machine on your desk runs your software, but serves someone else's interests.
+Operating systems became platforms for telemetry and metadata collective. Applications became subscriptions. Your files became someone else's cloud. Your habits became someone else's dataset. The machine on your desk runs your software, but serves someone else's interests.
 
 JUX exists because that is unacceptable.
 
