@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
-// Author-X: text editor with native column selection for the JUX desktop
+// Author-X: a text editor for structuring text — column selection and level indentation
 //
 // Esqueleto: existe para o workspace compilar e para `cargo run -p jux-authorx`
 // responder alguma coisa. Ver authorx/README.md para escopo e perguntas em aberto.

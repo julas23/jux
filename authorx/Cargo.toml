@@ -1,6 +1,6 @@
 [package]
 name        = "jux-authorx"
-description = "Author-X: text editor with native column selection for the JUX desktop"
+description = "Author-X: a text editor for structuring text — column selection and level indentation"
 version.workspace      = true
 edition.workspace      = true
 license.workspace      = true

@@ -12,6 +12,13 @@ structures and work with remote storage as a matter of routine.
 - Trash, bulk operations, archive handling
 - Removable media and network shares
 
+## Toolkit
+
+**Rust + [iced](https://iced.rs).** Decided — xTree-Silver is the first JUX component
+with its toolkit settled, and the reason is consistency: iced is the same foundation
+`libcosmic` is built on, it is pure Rust, and one toolkit across the whole suite buys
+visual consistency for free and leaves one surface to maintain instead of several.
+
 ## Status
 
 **Early planning.** No implementation yet.

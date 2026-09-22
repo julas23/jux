@@ -19,7 +19,7 @@ model and example — never as a source of copied code.
 | **xSight** | `xsight` | `jux-xsight` | Image viewer |
 | **Scrive** | `scrive` | `jux-scrive` | PDF reader |
 | **eXact** | `exct` | `jux-exct` | Calculator — standard, financial and scientific |
-| **Author-X** | `authorx` | `jux-authorx` | Text editor with native, first-class column selection |
+| **Author-X** | `authorx` | `jux-authorx` | Text editor for structuring text — column selection and level indentation |
 
 Crate names carry a `jux-` prefix; binary names do not. `orbit` and `xts` are already
 taken on crates.io by placeholder crates, and the prefix keeps the namespace safe
@@ -57,8 +57,9 @@ Each component has its own README describing scope and open questions.
 
 These are deliberately unresolved and tracked here so they are not decided by accident:
 
-- **GUI toolkit.** `iced` is the leading candidate, for consistency across the whole
-  suite. Alternatives under consideration: Slint, GTK4, or raw `wayland-client`.
+- **GUI toolkit for the remaining components.** `iced` is settled for xTree-Silver
+  and is the presumed default for the rest, for consistency — but it is not yet a
+  formal commitment beyond that one component.
 - **Compositor strategy.** Whether Orbit ships its own compositor from the start
   (Smithay) or runs its shell on an existing one first.
 
