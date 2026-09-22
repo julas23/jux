@@ -80,14 +80,25 @@ footprint became the single dominating metric.
 ## Status
 
 **Early planning.** Directory structure and intent only — no implementation yet.
-Each component has its own README describing scope and open questions.
 
-## Open decisions
+The architectural decisions are settled: Rust, iced, own Smithay compositor,
+`GPL-3.0-or-later`. What remains open is per-component and documented in each
+component's own README.
 
-These are deliberately unresolved and tracked here so they are not decided by accident:
+## Compositor
 
-- **Compositor strategy.** Whether Orbit ships its own compositor from the start
-  (Smithay) or runs its shell on an existing one first.
+**Orbit ships its own compositor, on [Smithay](https://smithay.github.io), from the
+start** — it is not a shell layered on someone else's. Animation and visual effects live
+in the compositor's render loop and cannot be retrofitted cheaply; COSMIC is adding blur,
+shadows and a Vulkan renderer in its second epoch, after 1.0, which is the cost of
+leaving it for later.
+
+Development starts nested: Smithay's winit backend runs the compositor as a window inside
+an existing session, so there is a working desktop throughout. See
+[orbit/README.md](orbit/README.md#compositor) for milestones and what Smithay does and
+does not provide.
+
+The five applications are ordinary Wayland clients and are unaffected by this choice.
 
 ## Licence
 
