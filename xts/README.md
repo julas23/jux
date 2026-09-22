@@ -14,10 +14,8 @@ structures and work with remote storage as a matter of routine.
 
 ## Toolkit
 
-**Rust + [iced](https://iced.rs).** Decided — xTree-Silver is the first JUX component
-with its toolkit settled, and the reason is consistency: iced is the same foundation
-`libcosmic` is built on, it is pure Rust, and one toolkit across the whole suite buys
-visual consistency for free and leaves one surface to maintain instead of several.
+**Rust + [iced](https://iced.rs)** — the toolkit for every JUX component. See the
+[root README](../README.md#toolkit) for why, including why Slint was rejected.
 
 ## Status
 

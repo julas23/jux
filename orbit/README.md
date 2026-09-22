@@ -25,6 +25,14 @@ window management that ties them together. It is a Wayland shell, written in Rus
 - **Modules are a list in the config**, not a hard-coded layout. Reordering or removing
   a panel widget is a config edit, not a fork.
 
+## Toolkit
+
+**Rust + [iced](https://iced.rs)**, via [`libcosmic`](https://github.com/pop-os/libcosmic)
+for the layer-shell surfaces. The panel and the dock are not ordinary windows — they are
+`wlr-layer-shell` surfaces, which is what makes a window behave as a bar instead of
+floating in the layout. libcosmic exists for precisely this and ships in COSMIC's own
+panel and applets. See the [root README](../README.md#toolkit).
+
 ## Status
 
 **Early planning.** No implementation yet.

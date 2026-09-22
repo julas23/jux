@@ -37,6 +37,35 @@ cargo run -p jux-exct       # one component
 Every binary currently prints its name and description and exits — the crates are
 skeletons, present so the workspace builds and the layout is real.
 
+## Toolkit
+
+**Rust + [iced](https://iced.rs), across every component.** One toolkit for the whole
+suite buys visual consistency for free and leaves one surface to learn and maintain
+instead of several.
+
+[Slint](https://slint.dev) was considered seriously and rejected. It is lighter, better
+documented and has a more stable API — but three things decided against it here:
+
+- **Layer-shell.** Orbit's panel and dock must be `wlr-layer-shell` surfaces. On iced
+  that path is production-proven: `libcosmic` exists for exactly this and ships in
+  COSMIC's own panel and applets. Slint's only route is a third-party bridge that
+  describes itself as pre-1.0 and not ready for production.
+- **Licence.** Slint's GPL option is `GPL-3.0-only`, which would pin our binaries to
+  version 3 and make our `-or-later` unexercisable. The alternative — Slint's
+  royalty-free licence — is free for desktop but requires displaying Slint attribution
+  in the application. A desktop environment should not be contractually obliged to show
+  another company's badge.
+- **Reference material.** The architecture here follows COSMIC. With iced, `libcosmic`
+  and every COSMIC application are directly readable references for the problems we will
+  hit. With Slint they are one language removed.
+
+Worth naming specifically: [`cosmic-text`](https://github.com/pop-os/cosmic-text) solves
+shaping, layout, grapheme clusters, bidirectional text and editing — which is exactly the
+list of hard parts in Author-X's README. iced's text editing is built on it.
+
+This decision would deserve revisiting if the shell were dropped from scope or if
+footprint became the single dominating metric.
+
 ## Principles
 
 - **Configuration over forking.** Layout, modules, colours and behaviour come from a
@@ -57,9 +86,6 @@ Each component has its own README describing scope and open questions.
 
 These are deliberately unresolved and tracked here so they are not decided by accident:
 
-- **GUI toolkit for the remaining components.** `iced` is settled for xTree-Silver
-  and is the presumed default for the rest, for consistency — but it is not yet a
-  formal commitment beyond that one component.
 - **Compositor strategy.** Whether Orbit ships its own compositor from the start
   (Smithay) or runs its shell on an existing one first.
 

@@ -62,6 +62,11 @@ Text storage itself is a solved problem in Rust: `ropey` is the obvious foundati
 multi-cursor editing is a first-class concept in the Helix and Kakoune model, which is
 the right reference to study.
 
+The Unicode problem is largely solved too, and by the toolkit we already chose:
+[`cosmic-text`](https://github.com/pop-os/cosmic-text) handles shaping, layout, grapheme
+clusters, bidirectional text and editing, and iced's text editing is built on it. That
+is a considerable head start on the nastiest part of this component.
+
 ## Open design questions
 
 Scope is settled; these are about how the two features meet.
