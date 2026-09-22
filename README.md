@@ -12,14 +12,30 @@ model and example — never as a source of copied code.
 
 ## Components
 
-| Component | Command | What it is |
-|---|---|---|
-| **Orbit** | `orbit` | The desktop shell — compositor, panel, dock, workspaces, window management |
-| **xTree-Silver** | `xts` | File manager |
-| **xSight** | `xsight` | Image viewer |
-| **Scrive** | `scrive` | PDF reader |
-| **eXact** | `exct` | Calculator — standard, financial and scientific |
-| **Author-X** | `authorx` | Text editor with native, first-class column selection |
+| Component | Command | Crate | What it is |
+|---|---|---|---|
+| **Orbit** | `orbit` | `jux-orbit` | The desktop shell — compositor, panel, dock, workspaces, window management |
+| **xTree-Silver** | `xts` | `jux-xts` | File manager |
+| **xSight** | `xsight` | `jux-xsight` | Image viewer |
+| **Scrive** | `scrive` | `jux-scrive` | PDF reader |
+| **eXact** | `exct` | `jux-exct` | Calculator — standard, financial and scientific |
+| **Author-X** | `authorx` | `jux-authorx` | Text editor with native, first-class column selection |
+
+Crate names carry a `jux-` prefix; binary names do not. `orbit` and `xts` are already
+taken on crates.io by placeholder crates, and the prefix keeps the namespace safe
+without changing what you type in a terminal.
+
+## Building
+
+A Cargo workspace, one crate per component. Requires Rust 1.85 or newer (edition 2024).
+
+```sh
+cargo build --workspace     # everything
+cargo run -p jux-exct       # one component
+```
+
+Every binary currently prints its name and description and exits — the crates are
+skeletons, present so the workspace builds and the layout is real.
 
 ## Principles
 

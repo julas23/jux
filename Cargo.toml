@@ -1,0 +1,32 @@
+# Workspace do JUX — uma crate por componente.
+#
+# Os nomes de CRATE levam o prefixo `jux-` e os nomes de BINÁRIO não: `orbit` e
+# `xts` já estão tomados na crates.io por placeholders, e o prefixo protege o
+# namespace sem mudar o que se digita no terminal. É a mesma convenção do COSMIC
+# (`cosmic-comp`, `cosmic-files`), que é a referência de arquitetura do projeto.
+
+[workspace]
+resolver = "3"
+members = ["orbit", "xts", "xsight", "scrive", "exct", "authorx"]
+
+# Metadados herdados por todas as crates com `campo.workspace = true`, para que
+# versão, licença e repositório existam num lugar só.
+[workspace.package]
+version      = "0.0.0"
+edition      = "2024"
+license      = "GPL-3.0-or-later"
+repository   = "https://github.com/julas23/jux"
+authors      = ["Juliano Silva <julianoas@gmail.com>"]
+rust-version = "1.85"          # primeira versão com a edição 2024
+
+# Dependências comuns entram aqui e as crates puxam com `dep.workspace = true`.
+# Vazio de propósito: o toolkit gráfico ainda não foi decidido (ver README).
+[workspace.dependencies]
+
+[profile.release]
+lto           = true
+codegen-units = 1
+strip         = "symbols"
+# panic = "abort" NÃO está aqui de propósito: reduz o binário, mas quebra
+# `catch_unwind`, que vários toolkits gráficos usam para não derrubar a
+# aplicação inteira quando um widget entra em pânico.

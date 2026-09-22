@@ -1,0 +1,17 @@
+[package]
+name        = "jux-exct"
+description = "eXact: standard, financial and scientific calculator for the JUX desktop"
+version.workspace      = true
+edition.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+authors.workspace      = true
+rust-version.workspace = true
+
+# O binário não leva o prefixo `jux-`: na crates.io a crate é "jux-exct",
+# no terminal o comando é "exct".
+[[bin]]
+name = "exct"
+path = "src/main.rs"
+
+[dependencies]

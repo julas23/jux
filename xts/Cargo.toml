@@ -1,0 +1,17 @@
+[package]
+name        = "jux-xts"
+description = "xTree-Silver: file manager for the JUX desktop"
+version.workspace      = true
+edition.workspace      = true
+license.workspace      = true
+repository.workspace   = true
+authors.workspace      = true
+rust-version.workspace = true
+
+# O binário não leva o prefixo `jux-`: na crates.io a crate é "jux-xts",
+# no terminal o comando é "xts".
+[[bin]]
+name = "xts"
+path = "src/main.rs"
+
+[dependencies]
