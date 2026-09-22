@@ -41,13 +41,24 @@ Each component has its own README describing scope and open questions.
 
 These are deliberately unresolved and tracked here so they are not decided by accident:
 
-- **Licence.** Not yet chosen. Since this is a clean reimplementation, the choice is
-  free and is about who may use the result, not about compatibility. Dependency
-  licences are what need checking — not the licences of the projects studied.
 - **GUI toolkit.** `iced` is the leading candidate, for consistency across the whole
   suite. Alternatives under consideration: Slint, GTK4, or raw `wayland-client`.
 - **Compositor strategy.** Whether Orbit ships its own compositor from the start
   (Smithay) or runs its shell on an existing one first.
+
+## Licence
+
+JUX is free software, licensed under the **GNU General Public License, version 3 or
+(at your option) any later version** — `GPL-3.0-or-later`. The full text is in
+[LICENSE](LICENSE).
+
+This applies to every component in the repository. A copyleft licence is a deliberate
+choice: work that comes back to this project stays available to everyone who uses it.
+
+Because JUX is a clean reimplementation rather than a derivative of any existing
+project, this licence was free to choose. What still has to be checked, per component,
+is the licence of each **dependency** — a crate's terms apply to whatever links against
+it, and some are incompatible with distributing a desktop application at all.
 
 ## Built from
 
